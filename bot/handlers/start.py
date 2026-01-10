@@ -38,10 +38,9 @@ async def process_start(message: types.Message):
         user = UserLogics().get_by_chat_id(message.from_user.id)
 
     await message.answer_photo(
-        photo='https://i.pinimg.com/736x/67/fd/14/67fd14e8656002eeebbb1c139bc76d98.jpg',
+        photo='https://i.pinimg.com/736x/d2/dd/e7/d2dde7f1b22e91549ae2f214a2ce64bf.jpg',
         caption=(
-            "🔥 Hazır mısın?\n\n"
-            "Telegram’daki en hızlı oyunlarda anında kazan, sürprizleri keşfet! 🎯\n"
+            "👑 Kraliyet bonusları, günlük hediyeler ve gizli kodlar — ödülünü her gün kap!💎🔥\n\n"
         ),
         parse_mode="HTML",
         reply_markup=InlineKeyboardMarkup().add(
