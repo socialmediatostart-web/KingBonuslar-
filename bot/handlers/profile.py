@@ -335,7 +335,7 @@ async def process_open_profile(message: types.Message):
     channel_str_link = f"<a href='{COMMUNITY_URL}'>Kanal</a>"
     site_str_link = f"<a href='{REGISTRATION_URL}'>Registration Link</a>"
 
-    site_id_clean = html_escape(user.site_id) if user.site_id else f"<i>Site ID’ni {site_str_link} üzerinden gir</i>"
+    # site_id_clean = html_escape(user.site_id) if user.site_id else f"<i>Site ID’ni {site_str_link} üzerinden gir</i>"
 
     await message.answer(
         f"🌟: <b>{user.nickname if user.nickname else user.username}</b>\n" +
