@@ -6,8 +6,15 @@ def main_menu_keyboard():
     keyboard = [
         [
             KeyboardButton(DefaultKeyboardButtons.BonusTransfer.value),
-            KeyboardButton(DefaultKeyboardButtons.CreateBonus.value)
-        ]
+        ],
+        [
+            KeyboardButton(DefaultKeyboardButtons.Profile.value),
+            KeyboardButton(DefaultKeyboardButtons.BonusRequests.value)
+        ],
+        [
+            KeyboardButton(DefaultKeyboardButtons.Bonuses.value),
+            KeyboardButton(DefaultKeyboardButtons.Invite.value)
+        ],
     ]
 
     return ReplyKeyboardMarkup(
