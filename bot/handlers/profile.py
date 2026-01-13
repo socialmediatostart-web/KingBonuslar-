@@ -346,23 +346,23 @@ async def process_open_profile(message: types.Message):
     )
 
 
-@dp.callback_query_handler(text=CallbackQueryTypes.UpdateSiteID.value)
-async def process_update_site_id(call: types.CallbackQuery):
-    await call.message.answer(f"Site ID’ni gir", reply_markup=cancel_keyboard())
-    await call.message.delete()
-    await UpdateSiteID.send_side_id.set()
+# @dp.callback_query_handler(text=CallbackQueryTypes.UpdateSiteID.value)
+# async def process_update_site_id(call: types.CallbackQuery):
+#     await call.message.answer(f"Site ID’ni gir", reply_markup=cancel_keyboard())
+#     await call.message.delete()
+#     await UpdateSiteID.send_side_id.set()
 
 
-@dp.message_handler(state=UpdateSiteID.send_side_id)
-async def process_write_site_id(message: types.Message, state: FSMContext):
-    await state.finish()
-    user = UserLogics.get_by_chat_id(message.from_user.id)
-    user_input = message.text.strip()
-    if len(user_input) <= 32 and user_input.isdigit():
-        user.site_id = user_input
-        user.save(only=(User.site_id,))
-        await message.answer(f"Site ID başarıyla kaydedildi 😉" +
-                             f"\n👉 Değiştirmen gerekirse, {DefaultKeyboardButtons.Profile.value} menüsünü ziyaret edebilirsin.",
-                             reply_markup=main_menu_keyboard())
-    else:
-        await message.answer("Site ID sadece rakamlardan oluşmalı 😉", reply_markup=main_menu_keyboard())
+# @dp.message_handler(state=UpdateSiteID.send_side_id)
+# async def process_write_site_id(message: types.Message, state: FSMContext):
+#     await state.finish()
+#     user = UserLogics.get_by_chat_id(message.from_user.id)
+#     user_input = message.text.strip()
+#     if len(user_input) <= 32 and user_input.isdigit():
+#         user.site_id = user_input
+#         user.save(only=(User.site_id,))
+#         await message.answer(f"Site ID başarıyla kaydedildi 😉" +
+#                              f"\n👉 Değiştirmen gerekirse, {DefaultKeyboardButtons.Profile.value} menüsünü ziyaret edebilirsin.",
+#                              reply_markup=main_menu_keyboard())
+#     else:
+#         await message.answer("Site ID sadece rakamlardan oluşmalı 😉", reply_markup=main_menu_keyboard())
