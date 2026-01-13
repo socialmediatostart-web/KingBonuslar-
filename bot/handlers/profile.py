@@ -342,7 +342,7 @@ async def process_open_profile(message: types.Message):
         # f"🃏: <b>{site_id_clean}</b>\n" +
         f"📣: <b>{'✅ Abone Olundu' if user_subscribed else f'📛 {channel_str_link} kanalımıza abone ol'}</b>",
         disable_web_page_preview=True,
-        reply_markup=profile_keyboard() if user.is_manager or user.group == Groups.All.value else None
+        # reply_markup=profile_keyboard() if user.is_manager or user.group == Groups.All.value else None
     )
 
 
