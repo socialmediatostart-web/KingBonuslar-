@@ -5,7 +5,8 @@ from common.constants import DefaultKeyboardButtons
 def main_menu_keyboard():
     keyboard = [
         [
-            KeyboardButton(DefaultKeyboardButtons.BonusTransfer.value)
+            KeyboardButton(DefaultKeyboardButtons.BonusTransfer.value),
+            KeyboardButton(DefaultKeyboardButtons.CreateBonus.value)
         ]
     ]
 
